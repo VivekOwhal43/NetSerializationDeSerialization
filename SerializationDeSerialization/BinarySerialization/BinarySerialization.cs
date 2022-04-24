@@ -9,7 +9,7 @@ namespace SerializationDeSerialization
             Demo sample = new Demo();           // boject of serializable class
             FileStream fileStream = new FileStream(@"/home/vivek/bridgelabz/NetSerializationDeSerialization/SerializationDeSerialization/MyFile.txt",FileMode.Create);      // creating file in a specified directory
             BinaryFormatter formatter = new BinaryFormatter();      // creating object of BinaryFormatter Class
-            formatter.Serialize(fileStream,sample);
+            formatter.Serialize(fileStream,sample);                 // by using formatter adding details in .txt file.
         }
     }
 
