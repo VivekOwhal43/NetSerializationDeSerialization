@@ -11,6 +11,14 @@ namespace SerializationDeSerialization
             BinaryFormatter formatter = new BinaryFormatter();      // creating object of BinaryFormatter Class
             formatter.Serialize(fileStream,sample);                 // by using formatter adding details in .txt file.
         }
+
+        public void BinDeSerialization()                // method for binary deserialization
+        {
+            FileStream fileStream = new FileStream(@"/home/vivek/bridgelabz/NetSerializationDeSerialization/SerializationDeSerialization/MyFile.txt",FileMode.Open);    //opening file using FileStream class
+            BinaryFormatter formatter = new BinaryFormatter();         // creating object of binary formatter 
+            Demo deSerializationdemo = (Demo)formatter.Deserialize(fileStream);         //perfotm deserializatioin on file 
+            Console.WriteLine($"Application Name {deSerializationdemo.ApplicationName} --- Application Id {deSerializationdemo.ApplicationId}");     // writing deserialized content to the console
+        }
     }
 
     [Serializable]
